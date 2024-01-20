@@ -9,6 +9,13 @@ A small node js Rest API built on fastify that powers a vending machine.
 - [Tobi Alagbe](mailto:alagbet100@gmail.com)
 
 
+## Logic
+
+The main logic file is found in 
+```bash
+src/modules/vendingMachine/VendingMachine.ts
+```
+
 ## Run Locally
 
 Clone the project
