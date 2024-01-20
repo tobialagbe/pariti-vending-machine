@@ -1,0 +1,56 @@
+{
+  "name": "ParitiVendingMachine",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon --watch './src/**/*.ts' --exec ts-node ./src/app.ts",
+    "build": "tsc",
+    "start": "NODE_ENV=default node ./dist/src/app.js",
+    "test:watch": "npm run test -- --watchAll",
+    "test": " NODE_ENV=test REGION=Africa/Lagos nyc  --reporter text   ts-mocha './src/modules/**/tests/*.spec.ts' --exit"
+  },
+  "keywords": [],
+  "author": "Tobi Alagbe",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "8.2.0",
+    "fastify": "^3.14.2",
+    "fastify-cors": "6.0.2",
+    "fastify-helmet": "^5.3.2",
+    "fastify-rate-limit": "^5.6.0",
+    "joi": "^17.4.1",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "@commitlint/config-conventional": "^12.1.4",
+    "@types/cors": "^2.8.10",
+    "@types/jest": "^26.0.22",
+    "@types/node": "^14.14.37",
+    "@typescript-eslint/eslint-plugin": "^4.22.0",
+    "@typescript-eslint/parser": "^4.22.0",
+    "commitlint": "^12.1.4",
+    "eslint": "^7.27.0",
+    "nodemon": "^2.0.7",
+    "sinon": "^11.1.1",
+    "ts-jest": "^26.5.4",
+    "ts-mocha": "^8.0.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ],
+    "rules": {
+      "subject-case": [
+        2,
+        "never",
+        [
+          "start-case",
+          "pascal-case"
+        ]
+      ]
+    }
+  }
+}
