@@ -140,5 +140,3 @@ const initialCoins: Coin[] = [
 const maintenanceKey = "secureMaintenanceKey123";
 
 
-// export const vendingMachine = new VendingMachine(initialProducts, initialCoins, maintenanceKey);
-

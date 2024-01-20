@@ -1,30 +1,7 @@
-import { Coin, Product } from './vending.interface';
+import { initialProducts, initialCoins, acceptedDenominations, maintenanceKey } from './vending.constants';
 import VendingMachineService from './vending.service';
 
-const initialProducts: Product[] = [
-  { id: 1, name: "Water", price: 150, quantity: 10 }, // Price in cents
-  { id: 2, name: "Chocolate", price: 100, quantity: 20 },
-  { id: 3, name: "Chips", price: 75, quantity: 15 },
-  { id: 4, name: "Cookies", price: 95, quantity: 10 }
-];
-      
-const initialCoins: Coin[] = [
-  { denomination: 25, quantity: 50 }, // 25 cents coins
-  { denomination: 10, quantity: 100 }, // 10 cents coins
-  { denomination: 5, quantity: 200 },  // 5 cents coins
-  { denomination: 1, quantity: 500 }   // 1 cent coins
-];
-
- const acceptedDenominations = [1, 5, 10, 25];
-      
-const maintenanceKey = "secureMaintenanceKey123";
-
 const vendingMachineService = new VendingMachineService({initialProducts, initialCoins, acceptedDenominations, maintenanceKey});
-const healthCheck = async (request, response) => {
-
-  console.log('HEALTH CHECK PING!');
-  return "Server is up and running!";
-}
 
 const buyProduct = async (request, response) => {
   try {
@@ -66,5 +43,5 @@ const updateCoins = async (request, response) => {
   }
 };
 
-export default { healthCheck, buyProduct, setProductPrice, restockProduct, updateCoins };
+export default { buyProduct, setProductPrice, restockProduct, updateCoins };
 

@@ -18,5 +18,7 @@
     },
     "noImplicitAny": false,
     "lib": ["es6"]
-  }
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist"]
 }
